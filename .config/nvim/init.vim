@@ -12,3 +12,4 @@ call plug#end()
 set hlsearch
 set number
 set undofile
+set signcolumn=yes
