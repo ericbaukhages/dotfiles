@@ -13,3 +13,5 @@ set hlsearch
 set number
 set undofile
 set signcolumn=yes
+
+autocmd Filetype gitcommit setlocal spell textwidth=72
