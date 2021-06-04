@@ -10,8 +10,8 @@ HISTSIZE=1000
 SAVEHIST=10000000000000
 
 # start the completion system
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+zstyle ':completion:*' menu select
 
 # Prompt settings
 # Find info on `vcs_info` in `man zshcontrib`
@@ -26,6 +26,13 @@ PS1='%n@%m %F{3}%3~ ${vcs_info_msg_0_}%f%# '
 # Set EDITOR for `git`, etc.
 export EDITOR="vim"
 
-# fzf bindings
+# Plugins
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+source $HOME/.config/zsh/zsh-z.plugin.zsh
+
+# Functions
+
+j () {
+	cd $(z | grep -v common: | fzf | awk '{print $2}')
+}
