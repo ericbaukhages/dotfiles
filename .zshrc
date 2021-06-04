@@ -7,6 +7,7 @@ bindkey -e
 unsetopt autocd beep
 
 # Settings for history file
+setopt inc_append_history
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
 SAVEHIST=10000000000000
