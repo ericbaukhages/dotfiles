@@ -25,3 +25,7 @@ PS1='%n@%m %F{3}%3~ ${vcs_info_msg_0_}%f%# '
 
 # Set EDITOR for `git`, etc.
 export EDITOR="vim"
+
+# fzf bindings
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
