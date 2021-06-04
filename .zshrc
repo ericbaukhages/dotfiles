@@ -1,3 +1,5 @@
+# ============================= zsh settings =============================
+
 # Use emacs bindings
 bindkey -e
 
@@ -23,13 +25,15 @@ zstyle ':vcs_info:*' formats '%F{5}[%F{2}%b%F{5}]%f '
 precmd () { vcs_info }
 PS1='%n@%m %F{3}%3~ ${vcs_info_msg_0_}%f%# '
 
-# Set EDITOR for `git`, etc.
-export EDITOR="vim"
-
 # Plugins
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 source $HOME/.config/zsh/zsh-z.plugin.zsh
+
+# ============================= user settings =============================
+
+# Set EDITOR for `git`, etc.
+export EDITOR="vim"
 
 # Functions
 
