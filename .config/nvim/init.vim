@@ -27,6 +27,11 @@ set undofile
 set signcolumn=yes
 "}}}
 
+" Plugin Options {{{
+map <leader>f :FZF<cr>
+nmap ; :Buffers<cr>
+"}}}
+
 " Autocmds {{{
 autocmd Filetype gitcommit setlocal spell textwidth=72
 "}}}
