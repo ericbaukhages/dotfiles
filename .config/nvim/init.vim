@@ -1,0 +1,2 @@
+set hlsearch
+set number
