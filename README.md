@@ -2,30 +2,25 @@
 
 ## Instructions
 
-Initialize `git` inside of `$HOME`. Also, set `showUntrackedFiles` to `no`.
+Set up dotfiles bare repo:
 
 ```bash
-cd ~
-git init
-git config status.showUntrackedFiles no
+git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/projects/dotfiles.git
+git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME status.showUntrackedFiles no
 ```
 
-Then add the dotfiles repo as the remote `origin`:
+Then to access the dotfiles git repo use the following command:
 
 ```bash
-git remote add origin git@github.com:ericbaukhages/dotfiles.git
+git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME
 ```
 
-Then you should be able to pull down the remote:
+`.zshrc` provides an alias `cfg` for this command.
 
-```bash
-git pull --set-upstream origin main
-```
+## TODO
 
-The setup is more complicated than using a bare repo, but it's worth it for two reasons:
-
-1. It allows you to use `git` instead of some alias. This allows you to use the prompt completion options, which wouldn't be available for the alias.
-2. This allows `vim` (or some other editor) to show git diff/history without having to set strange options.
+- [ ] copy `git` completion for `cfg`
+- [ ] use `--git-dir` and `--work-tree` options for signify in `nvim`
 
 ## Acknowledgement
 
