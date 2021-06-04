@@ -35,6 +35,10 @@ source $HOME/.config/zsh/zsh-z.plugin.zsh
 # Set EDITOR for `git`, etc.
 export EDITOR="vim"
 
+# Aliases
+alias tree="tree --dirsfirst"
+alias ls="ls --color --group-directories-first"
+
 # Functions
 
 j () {
