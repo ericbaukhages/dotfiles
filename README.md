@@ -21,6 +21,7 @@ git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME
 
 - [ ] copy `git` completion for `cfg`
 - [ ] use `--git-dir` and `--work-tree` options for signify in `nvim`
+- [ ] replicate the inline partial history search from oh-my-zsh
 
 ## Acknowledgement
 
