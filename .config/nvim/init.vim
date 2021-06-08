@@ -51,4 +51,4 @@ nmap ; :Buffers<cr>
 autocmd Filetype gitcommit setlocal spell textwidth=72
 "}}}
 
-" vim: fdm=marker:sw=2:sts=2:et
+" vim: fdm=marker
