@@ -54,5 +54,9 @@ alias cfg="git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME"
 # Functions
 
 j () {
-	cd $(z | grep -v common: | fzf | awk '{print $2}')
+	cd "$(z | grep -v common: | fzf | awk '{print $2}')"
+}
+
+scratch () {
+	vim ~/.scratch/`date +'%Y-%m-%d'`.md
 }
