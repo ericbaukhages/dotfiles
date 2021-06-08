@@ -49,6 +49,27 @@ nmap ; :Buffers<cr>
 
 " Autocmds {{{
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+function! NewScratchEntry()
+	let timestamp = "\#\# " . system("date +'\%I:\%M\%p'") . "\n\n"
+	let newEntryLineNumber = 0
+
+	if !(line('$') ==# 1)
+		normal G
+		normal o
+
+		let newEntryLineNumber = line('$')
+	endif
+
+	call append(newEntryLineNumber, split(timestamp, "\n")) " use `split` if there are multiple lines
+
+	normal G
+endfunction
+
+augroup markdown
+	autocmd Filetype markdown nnoremap <buffer> <silent> ++ :call NewScratchEntry()<cr>
+	autocmd Filetype markdown setlocal spell linebreak
+augroup END
 "}}}
 
 " vim: fdm=marker
