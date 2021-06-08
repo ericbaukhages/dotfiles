@@ -25,10 +25,21 @@ call plug#end()
 "}}}
 
 " Options {{{
-set hlsearch
 set number
+set hlsearch
 set undofile
 set signcolumn=yes
+
+set mouse=a
+
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set noexpandtab
+set autoindent
+set nosmartindent
+
+set backupcopy=yes
 "}}}
 
 " Plugin Options {{{
