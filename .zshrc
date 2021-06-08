@@ -16,6 +16,10 @@ SAVEHIST=10000000000000
 autoload -Uz compinit && compinit
 zstyle ':completion:*' menu select
 
+# partial inline history setting
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 # Prompt settings
 # Find info on `vcs_info` in `man zshcontrib`
 autoload -Uz vcs_info
