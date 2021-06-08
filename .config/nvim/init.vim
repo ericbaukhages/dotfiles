@@ -2,11 +2,13 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'mhinz/vim-signify'
+Plug 'itchyny/lightline.vim'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
 
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-commentary'
@@ -15,7 +17,9 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+
 Plug 'tpope/vim-fugitive'
+Plug 'APZelos/blamer.nvim'
 
 call plug#end()
 "}}}
