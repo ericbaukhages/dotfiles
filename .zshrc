@@ -50,6 +50,7 @@ export EDITOR="vim"
 alias tree="tree --dirsfirst"
 alias ls="ls --color --group-directories-first"
 alias cfg="git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME"
+alias _cfg="_git" # alias the _git completion for cfg alias
 
 # Functions
 
