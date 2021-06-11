@@ -59,5 +59,5 @@ j () {
 }
 
 scratch () {
-	vim ~/.scratch/`date +'%Y-%m-%d'`.md
+	vim +'normal G' ~/.scratch/`date +'%Y-%m-%d'`.md
 }
