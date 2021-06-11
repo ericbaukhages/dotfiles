@@ -17,6 +17,13 @@ git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME
 
 `.zshrc` provides an alias `cfg` for this command.
 
+For now, you'll need to create a `~/.gitconfig` referencing `.gitconfig.settings`:
+
+```
+[include]
+	path = ~/.gitconfig.settings
+```
+
 ## TODO
 
 - [ ] copy `git` completion for `cfg`

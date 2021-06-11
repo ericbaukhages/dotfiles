@@ -1,0 +1,8 @@
+[init]
+	defaultBranch = main
+[tig]
+	tab-size = 2
+[core]
+	pager = less -x2 --mouse
+
+; vi: ft=gitconfig
