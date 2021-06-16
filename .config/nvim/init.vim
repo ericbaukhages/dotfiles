@@ -32,7 +32,6 @@ set hlsearch
 set undofile
 set signcolumn=yes
 
-set mouse=a
 
 set tabstop=2
 set shiftwidth=2
