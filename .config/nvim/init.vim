@@ -107,7 +107,7 @@ endfunction
 
 augroup bash
 	autocmd Filetype termresults nnoremap <buffer> <cr> :call CloseIfTermResults()<cr>
-	autocmd Filetype sh nnoremap <buffer> <cr> <cmd> vsp term://./$<cr> <cmd> set filetype=termresults<cr>
+	autocmd Filetype sh nnoremap <buffer> <cr> <cmd> vsp term://./%<cr> <cmd> set filetype=termresults<cr>
 
 	autocmd Filetype sh nnoremap <buffer> <leader>x :w<cr>:Chmod +x<cr>i#!/bin/bash<cr><cr>
 augroup END
