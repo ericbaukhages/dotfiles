@@ -16,17 +16,17 @@ colorscheme eric
 
 " shortcuts {{{2
 " command mode Emacs-style movement keys, also found in bash/zsh
-cnoremap <C-a>  <Home>
-cnoremap <C-b>  <Left>
-cnoremap <C-f>  <Right>
-cnoremap <C-d>  <Delete>
-cnoremap <M-b>  <S-Left>
-cnoremap <M-f>  <S-Right>
-cnoremap <M-d>  <S-right><Delete>
+cnoremap <C-a> <Home>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-d> <Delete>
+cnoremap <M-b> <S-Left>
+cnoremap <M-f> <S-Right>
+cnoremap <M-d> <S-right><Delete>
 cnoremap <Esc>b <S-Left>
 cnoremap <Esc>f <S-Right>
 cnoremap <Esc>d <S-right><Delete>
-cnoremap <C-g>  <C-c>
+cnoremap <C-g> <C-c>
 "}}}2
 "}}}
 
@@ -37,43 +37,43 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " markdown {{{2
 function! NewScratchEntry()
-  let timestamp = "\#\# " . system("date +'\%I:\%M\%p'") . "\n\n"
-  let newEntryLineNumber = 0
+	let timestamp = "\#\# " . system("date +'\%I:\%M\%p'") . "\n\n"
+	let newEntryLineNumber = 0
 
-  if !(line('$') ==# 1)
-    " I wanted to add a `\n` to timestamp, but that didn't work for some reason
-    normal G
-    normal o
+	if !(line('$') ==# 1)
+		" I wanted to add a `\n` to timestamp, but that didn't work for some reason
+		normal G
+		normal o
 
-    let newEntryLineNumber = line('$')
-  endif
+		let newEntryLineNumber = line('$')
+	endif
 
-  " if needed, you can check if there's only one line in the file: `if line('$') ==# 1`
-  call append(newEntryLineNumber, split(timestamp, "\n")) " use `split` if there are multiple lines
+	" if needed, you can check if there's only one line in the file: `if line('$') ==# 1`
+	call append(newEntryLineNumber, split(timestamp, "\n")) " use `split` if there are multiple lines
 
-  normal G
+	normal G
 endfunction
 
 augroup markdown
-  autocmd Filetype markdown nnoremap <buffer> <silent> ++ :call NewScratchEntry()<cr>
-  autocmd Filetype markdown setlocal spell linebreak conceallevel=2
-  autocmd Filetype markdown let b:surround_91 = "[\r](\1link: \1)"
-  autocmd Filetype markdown let b:surround_42 = "**\r**"
+	autocmd Filetype markdown nnoremap <buffer> <silent> ++ :call NewScratchEntry()<cr>
+	autocmd Filetype markdown setlocal spell linebreak conceallevel=2
+	autocmd Filetype markdown let b:surround_91 = "[\r](\1link: \1)"
+	autocmd Filetype markdown let b:surround_42 = "**\r**"
 augroup END
 "}}}2
 
 " bash {{{2
 function! CloseIfTermResults()
-  if bufname() =~ "term://"
-    q
-  endif
+	if bufname() =~ "term://"
+		q
+	endif
 endfunction
 
 augroup bash
-  autocmd Filetype termresults nnoremap <buffer> <cr> :call CloseIfTermResults()<cr>
-  autocmd Filetype sh nnoremap <buffer> <cr> <cmd> vsp term://./%<cr> <cmd> set filetype=termresults<cr>
+	autocmd Filetype termresults nnoremap <buffer> <cr> :call CloseIfTermResults()<cr>
+	autocmd Filetype sh nnoremap <buffer> <cr> <cmd> vsp term://./%<cr> <cmd> set filetype=termresults<cr>
 
-  autocmd Filetype sh nnoremap <buffer> <leader>x :w<cr>:Chmod +x<cr>i#!/usr/bin/env bash<cr><cr>
+	autocmd Filetype sh nnoremap <buffer> <leader>x :w<cr>:Chmod +x<cr>i#!/usr/bin/env bash<cr><cr>
 augroup END
 "}}}2
 
@@ -114,7 +114,7 @@ map <leader>f :FZF<cr>
 nnoremap ; :Buffers<cr>
 
 function! RgCurrentWord()
-  execute ':Rg '.expand('<cword>')
+	execute ':Rg '.expand('<cword>')
 endfunction
 
 nmap <silent> gR :call RgCurrentWord()<cr>
@@ -147,8 +147,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf <Plug>(coc-fix-current)
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+" xmap <leader>f <Plug>(coc-format-selected)
+" nmap <leader>f <Plug>(coc-format-selected)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -164,8 +164,8 @@ command! -nargs=? Fold :call CocAction('fold', <f-args>)
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
-" command! -nargs=0 JestCurrent :call  CocAction('runCommand', 'jest.fileTest', ['%'])
+" command! -nargs=0 Jest :call CocAction('runCommand', 'jest.projectTest')
+" command! -nargs=0 JestCurrent :call CocAction('runCommand', 'jest.fileTest', ['%'])
 " command! JestInit :call CocAction('runCommand', 'jest.init')
 "}}}2
 "}}}1
