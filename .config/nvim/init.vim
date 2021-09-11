@@ -95,6 +95,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -124,6 +125,48 @@ let g:blamer_enabled = 1
 let g:blamer_delay = 200
 let g:blamer_date_format = '%Y-%m-%d %H:%M'
 let g:blamer_show_in_visual_modes = 0
+"}}}2
+
+" coc.nvim {{{2
+let g:coc_global_extensions = [
+	\ 'coc-css',
+	\ 'coc-eslint',
+	\ 'coc-html',
+	\ 'coc-jest',
+	\ 'coc-rust-analyzer',
+	\ 'coc-snippets',
+	\ 'coc-tailwindcss',
+	\ 'coc-tsserver',
+	\ ]
+nmap <silent> gF <Plug>(coc-action-format)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gy <Plug>(coc-type-definition)
+
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>qf <Plug>(coc-fix-current)
+" xmap <leader>f  <Plug>(coc-format-selected)
+" nmap <leader>f  <Plug>(coc-format-selected)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+		execute 'h '.expand('<cword>')
+	else
+		call CocAction('doHover')
+	endif
+endfunction
+
+command! -nargs=0 Format :call CocAction('format')
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" command! -nargs=0 Jest :call  CocAction('runCommand', 'jest.projectTest')
+" command! -nargs=0 JestCurrent :call  CocAction('runCommand', 'jest.fileTest', ['%'])
+" command! JestInit :call CocAction('runCommand', 'jest.init')
 "}}}2
 "}}}1
 
