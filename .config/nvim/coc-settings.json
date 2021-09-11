@@ -1,0 +1,14 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "gohtmltmpl",
+    "html",
+    "html",
+    "javascript",
+    "markdown",
+    "rust",
+    "scss",
+    "typescript",
+    "typescriptreact"
+  ]
+}
