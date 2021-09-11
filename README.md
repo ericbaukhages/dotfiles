@@ -9,6 +9,13 @@ git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
 ```
+For now, you'll need to create a `~/.gitconfig` referencing `.gitconfig.settings`:
+
+```
+[include]
+	path = ~/.gitconfig.settings
+```
+
 ## TODO
 
 - [ ] use `--git-dir` and `--work-tree` options for signify in `nvim` when editing config files
