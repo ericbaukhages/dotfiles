@@ -5,8 +5,9 @@
 Set up dotfiles bare repo:
 
 ```bash
-git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/projects/dotfiles.git
-git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME status.showUntrackedFiles no
+git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/.dotfiles
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+dotfiles config --local status.showUntrackedFiles no
 ```
 
 Then to access the dotfiles git repo use the following command:
