@@ -12,6 +12,8 @@ set tabstop=2
 
 set undofile
 
+colorscheme eric
+
 " shortcuts {{{2
 " command mode Emacs-style movement keys, also found in bash/zsh
 cnoremap <C-a>  <Home>
