@@ -9,26 +9,9 @@ git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
 ```
-
-Then to access the dotfiles git repo use the following command:
-
-```bash
-git --git-dir=$HOME/projects/dotfiles.git --work-tree=$HOME
-```
-
-`.zshrc` provides an alias `cfg` for this command.
-
-For now, you'll need to create a `~/.gitconfig` referencing `.gitconfig.settings`:
-
-```
-[include]
-	path = ~/.gitconfig.settings
-```
-
 ## TODO
 
-- [ ] copy `git` completion for `cfg`
-- [ ] use `--git-dir` and `--work-tree` options for signify in `nvim`
+- [ ] use `--git-dir` and `--work-tree` options for signify in `nvim` when editing config files
 - [ ] replicate the inline partial history search from oh-my-zsh
 
 ## Acknowledgement
