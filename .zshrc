@@ -25,6 +25,7 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export EDITOR="nvim"
 export PAGER="less --mouse"
 export SCRATCH_DIR="$HOME/Documents/scratch"
+export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 # }}}
 
 # aliases {{{
