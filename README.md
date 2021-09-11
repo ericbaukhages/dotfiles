@@ -14,9 +14,14 @@ Set up dotfiles bare repo:
 git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/.dotfiles
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 dotfiles config --local status.showUntrackedFiles no
+dotfiles checkout
 ```
-For now, you'll need to create a `~/.gitconfig` referencing `.gitconfig.settings`:
 
+You can then use the `dotfiles` alias to track changes to `.dotfiles`.
+
+## Warnings
+
+To use the `git` settings, you'll need to create a `~/.gitconfig` referencing `.gitconfig.settings`:
 ```
 [include]
 	path = ~/.gitconfig.settings
