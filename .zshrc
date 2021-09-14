@@ -6,7 +6,7 @@ export PATH=$PATH:$GOPATH/bin:$RUSTPATH/bin
 
 # oh-my-zsh {{{
 export ZSH_DISABLE_COMPFIX
-export ZSH="/Users/eric/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
