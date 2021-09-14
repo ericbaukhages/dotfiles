@@ -135,6 +135,7 @@ let g:coc_global_extensions = [
 	\ 'coc-jest',
 	\ 'coc-rust-analyzer',
 	\ 'coc-snippets',
+	\ 'coc-stylelint',
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
 	\ ]
