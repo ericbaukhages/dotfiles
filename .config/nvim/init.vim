@@ -54,8 +54,25 @@ function! NewScratchEntry()
 	normal G
 endfunction
 
+function! NewScratchEntryFullDatestamp()
+	let timestamp = "\#\# " . system("date +'\%Y-\%m-\%d \%H:\%M\%p'") . "\n\n"
+	let newEntryLineNumber = 0
+
+	if !(line('$') ==# 1)
+		normal G
+		normal o
+
+		let newEntryLineNumber = line('$')
+	endif
+
+	call append(newEntryLineNumber, split(timestamp, "\n")) " use `split` if there are multiple lines
+
+	normal G
+endfunction
+
 augroup markdown
 	autocmd Filetype markdown nnoremap <buffer> <silent> ++ :call NewScratchEntry()<cr>
+	autocmd Filetype markdown nnoremap <buffer> <silent> +- :call NewScratchEntryFullDatestamp()<cr>
 	autocmd Filetype markdown setlocal spell linebreak conceallevel=2
 	autocmd Filetype markdown let b:surround_91 = "[\r](\1link: \1)"
 	autocmd Filetype markdown let b:surround_42 = "**\r**"
