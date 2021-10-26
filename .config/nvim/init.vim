@@ -188,4 +188,5 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 "}}}2
 "}}}1
 
+highlight Comment cterm=italic
 " vim: fdm=marker
