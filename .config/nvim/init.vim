@@ -155,6 +155,7 @@ let g:coc_global_extensions = [
 	\ 'coc-stylelint',
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
+	\ 'coc-phpls',
 	\ ]
 nmap <silent> gF <Plug>(coc-action-format)
 nmap <silent> gd <Plug>(coc-definition)
