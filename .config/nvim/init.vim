@@ -182,6 +182,11 @@ command! -nargs=0 Format :call CocAction('format')
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
+imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " command! -nargs=0 Jest :call CocAction('runCommand', 'jest.projectTest')
 " command! -nargs=0 JestCurrent :call CocAction('runCommand', 'jest.fileTest', ['%'])

@@ -10,5 +10,8 @@
     "scss",
     "typescript",
     "typescriptreact"
+  ],
+  "snippets.ultisnips.directories": [
+    "~/.snippets"
   ]
 }
