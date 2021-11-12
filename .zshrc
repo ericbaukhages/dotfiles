@@ -13,7 +13,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
 	fzf
 	gitfast
-	osx
+	macos
 	z
 )
 
