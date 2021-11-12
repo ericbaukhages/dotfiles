@@ -106,6 +106,7 @@ augroup END
 " plugins {{{1
 call plug#begin("~/.config/nvim/plugged/")
 Plug 'APZelos/blamer.nvim'
+Plug 'ericbaukhages/vim-refresh'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf'
