@@ -151,12 +151,13 @@ let g:coc_global_extensions = [
 	\ 'coc-eslint',
 	\ 'coc-html',
 	\ 'coc-jest',
+	\ 'coc-phpls',
+	\ 'coc-react-refactor',
 	\ 'coc-rust-analyzer',
 	\ 'coc-snippets',
 	\ 'coc-stylelint',
 	\ 'coc-tailwindcss',
 	\ 'coc-tsserver',
-	\ 'coc-phpls',
 	\ ]
 nmap <silent> gF <Plug>(coc-action-format)
 nmap <silent> gd <Plug>(coc-definition)
@@ -165,10 +166,13 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gy <Plug>(coc-type-definition)
 
 nmap <leader>rn <Plug>(coc-rename)
-nmap <leader>ac <Plug>(coc-codeaction)
+" nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>qf <Plug>(coc-fix-current)
 " xmap <leader>f <Plug>(coc-format-selected)
 " nmap <leader>f <Plug>(coc-format-selected)
+
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
