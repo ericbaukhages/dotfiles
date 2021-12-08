@@ -22,7 +22,6 @@ source $ZSH/oh-my-zsh.sh
 
 # settings {{{
 export GIT_PS1_SHOWUPSTREAM="auto"
-export EDITOR="nvim"
 export PAGER="less --mouse"
 export SCRATCH_DIR="$HOME/Documents/scratch"
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
@@ -37,6 +36,28 @@ alias bat="bat -pp"
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 # Use $ZSH/custom for additional aliases
+# }}}
+
+# vim {{{
+# Config and shell function to toggle between traditional vim config, and lua config
+export NVIM_LSP_CONFIG_FILE="$HOME/.config/nvim/init.lua"
+export NVIM_CONFIG_FILE="$HOME/.config/nvim/init.vim"
+
+alias vim="nvim -u $NVIM_CONFIG_FILE"
+export EDITOR="nvim -u $NVIM_CONFIG_FILE"
+
+vimswitch() {
+  local CURRENT_VIM_CONFIG_FILE=`which vim | sed 's/^vim: aliased to nvim -u //'`
+  if [[ "$CURRENT_VIM_CONFIG_FILE" != "$NVIM_CONFIG_FILE" ]]; then
+    echo "Switching to normal vim: 'vim -u $NVIM_CONFIG_FILE'"
+    alias vim="nvim -u $NVIM_CONFIG_FILE"
+    export EDITOR="nvim -u $NVIM_CONFIG_FILE"
+  else
+    echo "Switching to alternative vim: 'nvim -u $NVIM_LSP_CONFIG_FILE'"
+    alias vim="nvim -u $NVIM_LSP_CONFIG_FILE"
+    export EDITOR="nvim -u $NVIM_LSP_CONFIG_FILE"
+  fi
+}
 # }}}
 
 # shell functions {{{
