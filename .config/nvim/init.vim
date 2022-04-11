@@ -192,10 +192,9 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
-" command! -nargs=0 Jest :call CocAction('runCommand', 'jest.projectTest')
-" command! -nargs=0 JestCurrent :call CocAction('runCommand', 'jest.fileTest', ['%'])
-" command! JestInit :call CocAction('runCommand', 'jest.init')
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Jest :call CocAction('runCommand', 'jest.projectTest')
+command! -nargs=0 JestCurrent :call CocAction('runCommand', 'jest.fileTest', ['%'])
 "}}}2
 "}}}1
 
