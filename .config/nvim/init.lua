@@ -12,6 +12,9 @@ vim.opt.tabstop = 2
 
 vim.opt.undofile = true
 
+--vim.opt.termguicolors = true
+vim.cmd('colorscheme eric')
+
 -- shortcuts {{{2
 -- command mode Emacs-style movement keys, also found in bash/zsh
 vim.keymap.set('c', '<C-a>', '<Home>', {})
