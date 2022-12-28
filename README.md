@@ -35,3 +35,5 @@ To use the `git` settings, you'll need to create a `~/.gitconfig` referencing `.
 ## Acknowledgement
 
 Dotfiles structure inspired by [Marcel Krčah](https://marcel.is/managing-dotfiles-with-git-bare-repo/), [Mat Jones](https://github.com/mrjones2014/dotfiles), and [Flavio Antelo](https://antelo.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b).
+
+Inspiration for neovim lua config found [here](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/), thanks Heiker Curiel.
