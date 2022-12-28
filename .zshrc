@@ -39,25 +39,8 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 # }}}
 
 # vim {{{
-# Config and shell function to toggle between traditional vim config, and lua config
-export NVIM_LSP_CONFIG_FILE="$HOME/.config/nvim/init.lua"
-export NVIM_CONFIG_FILE="$HOME/.config/nvim/init.vim"
-
-alias vim="nvim -u $NVIM_CONFIG_FILE"
-export EDITOR="nvim -u $NVIM_CONFIG_FILE"
-
-vimswitch() {
-  local CURRENT_VIM_CONFIG_FILE=`which vim | sed 's/^vim: aliased to nvim -u //'`
-  if [[ "$CURRENT_VIM_CONFIG_FILE" != "$NVIM_CONFIG_FILE" ]]; then
-    echo "Switching to normal vim: 'vim -u $NVIM_CONFIG_FILE'"
-    alias vim="nvim -u $NVIM_CONFIG_FILE"
-    export EDITOR="nvim -u $NVIM_CONFIG_FILE"
-  else
-    echo "Switching to alternative vim: 'nvim -u $NVIM_LSP_CONFIG_FILE'"
-    alias vim="nvim -u $NVIM_LSP_CONFIG_FILE"
-    export EDITOR="nvim -u $NVIM_LSP_CONFIG_FILE"
-  fi
-}
+alias vim="nvim"
+export EDITOR="nvim"
 # }}}
 
 # shell functions {{{
