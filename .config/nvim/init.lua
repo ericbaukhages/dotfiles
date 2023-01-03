@@ -64,14 +64,10 @@ require('packer').startup(function(use)
 	-- package manager
 	use 'wbthomason/packer.nvim'
 
-	-- old visual plugins
-	use 'itchyny/lightline.vim'
-	use 'mhinz/vim-signify'
-
 	-- chrome refresh plugin
 	use 'ericbaukhages/vim-refresh'
 
-	-- tpope plugins!
+	-- tpope plugins! {{{3
 	use 'tpope/vim-abolish'
 	use 'tpope/vim-commentary'
 	use 'tpope/vim-eunuch'
@@ -80,6 +76,68 @@ require('packer').startup(function(use)
 	use 'tpope/vim-sleuth'
 	use 'tpope/vim-surround'
 	use 'tpope/vim-vinegar'
+	---}}}
+
+	--- lsp {{{3
+	use {
+		'neovim/nvim-lspconfig',
+		requires = {
+			-- Automatically  install LSPs to stdpath for neovim
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+
+			-- Useful status updates for LSP
+			'j-hui/fidget.nvim',
+
+			-- Additional lua configuration
+			'folke/neodev.nvim',
+		}
+	}
+	---}}}
+
+	-- autocompletion {{{3
+	use {
+		'hrsh7th/nvim-cmp',
+		requires = {
+			'hrsh7th/cmp-nvim-lsp',
+			'L3MON4D3/LuaSnip',
+			'saadparwaiz1/cmp_luasnip',
+		}
+	}
+	--}}}
+
+	-- treesitter {{{3
+	use {
+		'nvim-treesitter/nvim-treesitter',
+		run = function()
+			pcall(require('nvim-treesitter.install').update({ with_sync = true }))
+		end
+	}
+	--}}}
+
+	use 'nvim-lualine/lualine.nvim'
+	use 'lewis6991/gitsigns.nvim'
+
+	-- telescope {{{3
+	use {
+		'nvim-telescope/telescope.nvim',
+		branch = '0.1.x',
+		requires = {
+			'nvim-lua/plenary.nvim',
+		}
+	}
+
+	use {
+		'nvim-telescope/telescope-fzf-native.nvim',
+		run = 'make',
+		cond = vim.fn.executable('make') == 1
+	}
+	--}}}
+
+	local has_plugins, plugins = pcall(require, 'custom.plugins')
+	if has_plugins then
+		plugins(use)
+	end
 
 	if install_plugins then
 		require('packer').sync()
@@ -89,6 +147,11 @@ end)
 
 -- don't continue if installing plugins for the first time
 if install_plugins then
+	print('===================================')
+	print('    Plugins are being installed    ')
+	print('    Wait until Packer completes,   ')
+	print('       then restart nvim           ')
+	print('===================================')
 	return
 end
 
