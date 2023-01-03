@@ -158,14 +158,37 @@ end
 --}}}
 
 -- Plugin settings {{{1
--- APZelos/blamer.nvim {{{2
-vim.cmd [[
-	let g:blamer_enabled = 1
-	let g:blamer_delay = 200
-	let g:blamer_date_format = '%Y-%m-%d %H:%M'
-	let g:blamer_show_in_visual_modes = 0
-]]
---}}}2
+
+-- telescope {{{2
+-- see `:help telescope` and `:help telescope.setup()`
+require('telescope').setup({
+	defaults = {
+		mappings = {
+			i = {
+				['<C-u>'] = false,
+				['<C-d>'] = false,
+			}
+		}
+	},
+})
+
+-- Enable telescope fzf native, if installed
+pcall(require('telescope').load_extension, 'fzf')
+
+-- keymaps {{{3
+-- See `:help telescope.builtin`
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
+vim.keymap.set('n', '<leader>/', function()
+	require('telescope.builtin').current_buffer_fuzzy_find(require('telescope').get_dropdown({
+		winblend = 10,
+		previewer = false,
+	}))
+end, { desc = '[/] Fuzzily search in current buffer' })
+--}}}
+
+--}}}
+
 --}}}
 
 -- vim: fdm=marker
