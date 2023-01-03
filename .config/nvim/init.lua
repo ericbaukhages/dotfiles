@@ -1,18 +1,18 @@
 -- nvim settings {{{1
-vim.opt.number = true
-vim.opt.hlsearch = true
-vim.opt.signcolumn = 'yes'
+vim.o.number = true
+vim.o.hlsearch = true
+vim.o.signcolumn = 'yes'
 
-vim.opt.autoindent = true
-vim.opt.smartindent = true
-vim.opt.expandtab = false
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.tabstop = 2
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.expandtab = false
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.tabstop = 2
 
-vim.opt.undofile = true
+vim.o.undofile = true
 
---vim.opt.termguicolors = true
+--vim.o.termguicolors = true
 vim.cmd('colorscheme eric')
 
 -- shortcuts {{{2
