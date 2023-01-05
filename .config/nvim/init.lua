@@ -13,6 +13,9 @@
 
 	vim.cmd('colorscheme eric')
 
+	vim.g.mapleader = ' '
+	vim.g.maplocalleader = ' '
+
 	-- shortcuts {{{2
 		-- command mode Emacs-style movement keys, also found in bash/zsh {{{3
 			vim.keymap.set('c', '<C-a>', '<Home>', {})
