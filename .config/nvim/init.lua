@@ -256,6 +256,7 @@
 			jsonls = {},
 			tailwindcss = {},
 			tsserver = {},
+			prettier = {},
 		}
 
 		require('mason-lspconfig').setup({
