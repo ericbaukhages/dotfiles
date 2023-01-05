@@ -160,6 +160,8 @@
 
 -- Plugin settings {{{1
 
+	require('gitsigns').setup()
+
 	-- telescope {{{2
 		-- see `:help telescope` and `:help telescope.setup()`
 		require('telescope').setup({
