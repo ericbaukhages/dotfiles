@@ -7,3 +7,4 @@ vim.opt.expandtab = false
 vim.opt.ignorecase = false
 vim.opt.relativenumber = false
 vim.opt.wrap = true
+vim.opt.clipboard = ""
