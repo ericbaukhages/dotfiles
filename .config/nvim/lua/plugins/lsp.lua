@@ -74,45 +74,19 @@ return {
 	},
 
 	{
-		"mhartington/formatter.nvim",
+		"nvimtools/none-ls.nvim",
 		config = function()
-			require("formatter").setup({
-				logging = true,
-				log_level = vim.log.levels.WARN,
-				filetype = {
-					html = {
-						require("formatter.filetypes.html").prettier,
-					},
-					css = {
-						require("formatter.filetypes.css").prettier,
-					},
-					json = {
-						require("formatter.filetypes.json").prettier,
-					},
-					javascript = {
-						require("formatter.filetypes.javascript").prettier,
-					},
-					javascriptreact = {
-						require("formatter.filetypes.javascriptreact").prettier,
-					},
-					typescript = {
-						require("formatter.filetypes.typescript").prettier,
-					},
-					typescriptreact = {
-						require("formatter.filetypes.typescriptreact").prettier,
-					},
-					["*"] = {
-						require("formatter.filetypes.any").remove_trailing_whitespace
-					}
+			local null_ls = require("null-ls")
+			null_ls.setup({
+				sources = {
+					null_ls.builtins.code_actions.eslint_d,
+					null_ls.builtins.code_actions.gitsigns,
+					null_ls.builtins.formatting.prettier,
+					null_ls.builtins.formatting.stylua,
 				}
 			})
-
-			vim.api.nvim_create_augroup("FormatAutogroup", { clear = true });
-			vim.api.nvim_create_autocmd("BufWritePost", {
-				group = "FormatAutogroup",
-				pattern = "*",
-				command = "FormatWrite",
-			})
 		end,
+		requires = { "nvim-lua/plenary.nvim" },
 	},
+
 }
