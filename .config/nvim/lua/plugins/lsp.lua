@@ -12,7 +12,8 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"eslint",
-					-- "tailwindcss",
+					"lua_ls",
+					"tailwindcss",
 					"tsserver",
 				}
 			})
@@ -26,8 +27,10 @@ return {
 		config = function()
 			-- Setup language servers.
 			local lspconfig = require('lspconfig')
-			lspconfig.tsserver.setup({})
+			lspconfig.eslint.setup({})
 			lspconfig.lua_ls.setup({})
+			lspconfig.tailwindcss.setup({})
+			lspconfig.tsserver.setup({})
 
 
 			-- Global mappings.
