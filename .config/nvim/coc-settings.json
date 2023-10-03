@@ -1,0 +1,18 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "gohtmltmpl",
+    "html",
+    "html",
+    "javascript",
+    "markdown",
+    "php",
+    "rust",
+    "scss",
+    "typescript",
+    "typescriptreact"
+  ],
+  "snippets.ultisnips.directories": [
+    "~/.snippets"
+  ]
+}
