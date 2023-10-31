@@ -32,6 +32,7 @@
 
 -- plugins {{{1
 	local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 	if not vim.loop.fs_stat(lazypath) then
 		vim.fn.system({
 			"git",
@@ -42,8 +43,9 @@
 			lazypath,
 		})
 	end
+
 	vim.opt.rtp:prepend(lazypath)
-	
+
 	-- load plugin list from ~/.config/nvim/lua/plugins/init.lua
 	require("lazy").setup("plugins");
 --{{{
