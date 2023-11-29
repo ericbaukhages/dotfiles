@@ -1,3 +1,3 @@
 return {
-	'ericbaukhages/vim-refresh',
+	"ericbaukhages/vim-refresh",
 }
