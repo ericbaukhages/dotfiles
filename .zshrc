@@ -79,7 +79,7 @@ vimbranchdiff() {
 vimgitshow() {
   FILE="$1"
   REF="$2"
-  vim <(git show $REF:$FILE)
+  git show $REF:$FILE | vim -c "doautocmd BufRead $(basename $FILE)" -
 }
 # }}}
 
