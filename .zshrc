@@ -1,7 +1,7 @@
 # $PATH {{{
 export GOPATH=$HOME/go
 export RUSTPATH=$HOME/.cargo
-export PATH=$PATH:$GOPATH/bin:$RUSTPATH/bin
+export PATH=$PATH:/usr/local/bin:$GOPATH/bin:$RUSTPATH/bin
 #}}}
 
 # oh-my-zsh {{{
@@ -39,7 +39,7 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 # }}}
 
 # vim {{{
-export EDITOR="nvim"
+export EDITOR="vim"
 # }}}
 
 # shell functions {{{
