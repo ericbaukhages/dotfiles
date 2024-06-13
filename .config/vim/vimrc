@@ -17,5 +17,3 @@ highlight Comment cterm=italic
 
 " `<C-E>` is already mapped to `<END>`
 cnoremap <C-A> <HOME>
-
-autocmd Filetype gitcommit setlocal spell textwidth=80
