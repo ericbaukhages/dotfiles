@@ -4,5 +4,7 @@
 	tab-size = 2
 [core]
 	pager = less -x2 --mouse
+[push]
+	autoSetupRemote = true
 
 ; vi: ft=gitconfig
