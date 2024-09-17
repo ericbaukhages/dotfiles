@@ -51,6 +51,14 @@ vim.opt.scrolloff = 10
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Set some default tabstop values, to be overritten by vim-sleuth, below
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.expandtab = false
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.tabstop = 2
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 
@@ -69,6 +77,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Add custom user command to inject the last 10 commands from zsh_history
+vim.api.nvim_create_user_command('ReadMostRecentCommands', function()
+  vim.cmd "r !sed 's/^:[^;]*;//' <(tail -n10 ~/.zsh_history)"
+end, {})
+vim.keymap.set('n', '<leader>gh', vim.cmd.ReadMostRecentCommands, { desc = '[G]rab [H]istory, last 10 from ~/.zsh_history' })
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -85,6 +99,12 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup {
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-eunuch',
+  'tpope/vim-fugitive',
+  'tpope/vim-repeat',
+  'tpope/vim-vinegar',
+  'tpope/vim-commentary',
+  'tpope/vim-surround',
 
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -539,7 +559,6 @@ require('lazy').setup {
       }
     end,
   },
-
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
@@ -555,6 +574,16 @@ require('lazy').setup {
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
+    end,
+  },
+
+  {
+    'eldritch-theme/eldritch.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    init = function()
+      vim.cmd [[colorscheme eldritch]]
     end,
   },
 
