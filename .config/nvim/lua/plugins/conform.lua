@@ -1,5 +1,5 @@
 return {
-	{ -- Autoformat
+  { -- Autoformat
     "stevearc/conform.nvim",
     event = { "BufWritePre" },
     cmd = { "ConformInfo" },
@@ -37,17 +37,17 @@ return {
         -- python = { "isort", "black" },
         --
         -- You can use "stop_after_first" to run the first available formatter from the list
-        javascript = { "prettier", "prettierd", stop_after_first = true },
-        typescript = { "prettier", "prettierd", stop_after_first = true },
-        javascriptreact = { "prettier", "prettierd", stop_after_first = true },
-        typescriptreact = { "prettier", "prettierd", stop_after_first = true },
-        css = { "prettier", "prettierd", stop_after_first = true },
-        html = { "prettier", "prettierd", stop_after_first = true },
-        json = { "prettier", "prettierd", stop_after_first = true },
-        yaml = { "prettier", "prettierd", stop_after_first = true },
-        markdown = { "prettier", "prettierd", stop_after_first = true },
-        graphql = { "prettier", "prettierd", stop_after_first = true },
+        javascript = { { "prettier", "prettierd" } },
+        typescript = { { "prettier", "prettierd" } },
+        javascriptreact = { { "prettier", "prettierd" } },
+        typescriptreact = { { "prettier", "prettierd" } },
+        css = { { "prettier", "prettierd" } },
+        html = { { "prettier", "prettierd" } },
+        json = { { "prettier", "prettierd" } },
+        yaml = { { "prettier", "prettierd" } },
+        markdown = { { "prettier", "prettierd" } },
+        graphql = { { "prettier", "prettierd" } },
       },
     },
-	},
+  },
 }
