@@ -1,3 +1,0 @@
-return {
-	"ericbaukhages/vim-refresh",
-}
