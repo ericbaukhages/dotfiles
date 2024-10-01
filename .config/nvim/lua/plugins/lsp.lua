@@ -1,3 +1,8 @@
+local servers = {
+	"lua_ls",
+	"ts_ls",
+}
+
 return {
 	{
 		"williamboman/mason.nvim",
@@ -9,10 +14,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = {
-					"lua_ls",
-					"ts_ls",
-				}
+				ensure_installed = servers
 			})
 		end
 	},
@@ -20,8 +22,10 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({})
-			lspconfig.ts_ls.setup({})
+
+			for _, server in ipairs(servers) do
+				lspconfig[server].setup({})
+			end
 
 			local b = vim.lsp.buf
 			local map = vim.keymap.set
