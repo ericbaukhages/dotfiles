@@ -1,3 +1,4 @@
+-- All options you want set before plugins, put in `lua/options.lua`
 require("options")
 
 -- Bootstrap lazy.nvim
@@ -8,7 +9,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   if vim.v.shell_error ~= 0 then
     vim.api.nvim_echo({
       { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
+      { out,                            "WarningMsg" },
       { "\nPress any key to exit..." },
     }, true, {})
     vim.fn.getchar()
@@ -16,4 +17,6 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- All functionality (i.e. plugins) is here, in role-specific files (e.g. `lsp.lua` and `lint.lua`)
 require("lazy").setup("plugins")
