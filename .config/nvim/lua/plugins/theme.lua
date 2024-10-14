@@ -1,9 +1,9 @@
 return {
-	"catppuccin/nvim",
+	"scottmckendry/cyberdream.nvim",
 	lazy = false,
-	name = "catppuccin",
+	name = "cyberdream",
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme "catppuccin"
+		vim.cmd.colorscheme "cyberdream"
 	end
 }
