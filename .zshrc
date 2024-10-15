@@ -35,6 +35,12 @@ alias bat="bat -pp"
 
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
+
+if ! command -v pbcopy 2>&1 >/dev/null; then
+  alias pbcopy="wl-copy"
+  alias pbpaste="wl-paste"
+fi
+
 # Use $ZSH/custom for additional aliases
 # }}}
 
