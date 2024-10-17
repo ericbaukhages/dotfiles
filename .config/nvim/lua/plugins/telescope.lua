@@ -14,6 +14,8 @@ return {
 				}
 			})
 
+			require("../keybindings").telescope()
+
 			pcall(require("telescope").load_extension, "ui-select")
 		end
 	},
