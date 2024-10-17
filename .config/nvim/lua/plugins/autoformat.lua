@@ -1,3 +1,7 @@
+local prettier = {
+  "prettierd"
+}
+
 return {
   { -- Autoformat
     "stevearc/conform.nvim",
@@ -37,16 +41,16 @@ return {
         -- python = { "isort", "black" },
         --
         -- You can use "stop_after_first" to run the first available formatter from the list
-        javascript = { { "prettier", "prettierd" } },
-        typescript = { { "prettier", "prettierd" } },
-        javascriptreact = { { "prettier", "prettierd" } },
-        typescriptreact = { { "prettier", "prettierd" } },
-        css = { { "prettier", "prettierd" } },
-        html = { { "prettier", "prettierd" } },
-        json = { { "prettier", "prettierd" } },
-        yaml = { { "prettier", "prettierd" } },
-        markdown = { { "prettier", "prettierd" } },
-        graphql = { { "prettier", "prettierd" } },
+        javascript = prettier,
+        typescript = prettier,
+        javascriptreact = prettier,
+        typescriptreact = prettier,
+        css = prettier,
+        html = prettier,
+        json = prettier,
+        yaml = prettier,
+        markdown = prettier,
+        graphql = prettier,
       },
     },
   },
