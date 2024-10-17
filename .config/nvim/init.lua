@@ -1,5 +1,5 @@
 -- All options you want set before plugins, put in `lua/options.lua`
-require("options")
+require("initial")
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
