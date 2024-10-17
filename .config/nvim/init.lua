@@ -1,4 +1,4 @@
--- All options you want set before plugins, put in `lua/options.lua`
+-- All initial options you want set before plugins, put in `lua/initial.lua`
 require("initial")
 
 -- Bootstrap lazy.nvim
