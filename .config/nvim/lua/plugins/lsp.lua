@@ -34,7 +34,7 @@ return {
 			local builtin = require("telescope.builtin")
 			local map = function(keys, func, desc, mode)
 				mode = mode or "n"
-				vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = desc })
+				vim.keymap.set(mode, keys, func, { desc = desc })
 			end
 
 			map("<leader>sf", builtin.find_files, "[S]earch [F]iles")
