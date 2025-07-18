@@ -19,6 +19,18 @@ dotfiles checkout
 
 You can then use the `dotfiles` alias to track changes to `.dotfiles`.
 
+## Iosevka
+
+To install the iosevka fonts on Ubuntu:
+
+```bash
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+curl -s 'https://api.github.com/repos/be5invis/Iosevka/releases/latest' | jq -r ".assets[] | .browser_download_url" | grep PkgTTF-IosevkaTerm- | xargs -n 1 curl -L -O --fail --show-error
+curl -s 'https://api.github.com/repos/be5invis/Iosevka/releases/latest' | jq -r ".assets[] | .browser_download_url" | grep PkgTTF-Iosevka- | xargs -n 1 curl -L -O --fail --show-error
+```
+Don't forget to unzip the downloads.
+
 ## Warnings
 
 To use the `git` settings, you'll need to create a `~/.gitconfig` referencing `.gitconfig.settings`:
