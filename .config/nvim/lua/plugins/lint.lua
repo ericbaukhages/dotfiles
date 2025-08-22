@@ -6,10 +6,10 @@ return {
       local lint = require "lint"
 
       lint.linters_by_ft = lint.linters_by_ft or {}
-      lint.linters_by_ft["javascript"] = { "eslint_d" }
-      lint.linters_by_ft["typescript"] = { "eslint_d" }
-      lint.linters_by_ft["javascriptreact"] = { "eslint_d" }
-      lint.linters_by_ft["typescriptreact"] = { "eslint_d" }
+      lint.linters_by_ft["javascript"] = { "eslint" }
+      lint.linters_by_ft["typescript"] = { "eslint" }
+      lint.linters_by_ft["javascriptreact"] = { "eslint" }
+      lint.linters_by_ft["typescriptreact"] = { "eslint" }
 
       lint.linters_by_ft["clojure"] = nil
       lint.linters_by_ft["dockerfile"] = nil
