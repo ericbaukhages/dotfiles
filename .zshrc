@@ -1,7 +1,7 @@
 # $PATH {{{
 export GOPATH=$HOME/go
 export RUSTPATH=$HOME/.cargo
-export PATH=$PATH:/usr/local/bin:$GOPATH/bin:$RUSTPATH/bin
+export PATH=$PATH:/usr/local/bin:$GOPATH/bin:$RUSTPATH/bin:/opt/homebrew/bin
 #}}}
 
 # oh-my-zsh {{{
