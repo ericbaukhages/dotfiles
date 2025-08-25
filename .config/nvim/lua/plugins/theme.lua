@@ -1,9 +1,10 @@
 return {
-	"scottmckendry/cyberdream.nvim",
+	"cpplain/flexoki.nvim",
 	lazy = false,
-	name = "cyberdream",
+	name = "flexoki",
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme "cyberdream"
+		vim.o.background = "dark"
+		vim.cmd.colorscheme "flexoki"
 	end
 }
