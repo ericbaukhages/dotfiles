@@ -10,13 +10,7 @@ local buildMap = function(buffer)
 end
 
 return {
-  lsp = function(buffer)
-    local b = vim.lsp.buf
-    local map = buildMap(buffer)
-
-    map("K", b.hover, "[K] Hover")
-    map("<leader>ca", b.code_action, "[C]ode [A]ction", { "n", "x" })
-    map("<leader>rn", b.rename, "[R]e[n]ame")
+  lsp = function()
   end,
   telescope = function()
     local map = buildMap()
