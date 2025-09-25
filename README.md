@@ -8,16 +8,13 @@ Install `oh-my-zsh`:
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Set up dotfiles bare repo:
+Set up dotfiles repo, using `stow`:
 
 ```bash
-git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/.dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dotfiles config --local status.showUntrackedFiles no
-dotfiles checkout
+git clone git@github.com:ericbaukhages/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+stow .
 ```
-
-You can then use the `dotfiles` alias to track changes to `.dotfiles`.
 
 ## Iosevka
 
@@ -46,6 +43,6 @@ To use the `git` settings, you'll need to create a `~/.gitconfig` referencing `.
 
 ## Acknowledgement
 
-Dotfiles structure inspired by [Marcel Krčah](https://marcel.is/managing-dotfiles-with-git-bare-repo/), [Mat Jones](https://github.com/mrjones2014/dotfiles), and [Flavio Antelo](https://antelo.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b).
+Previous dotfiles structure inspired by [Marcel Krčah](https://marcel.is/managing-dotfiles-with-git-bare-repo/), [Mat Jones](https://github.com/mrjones2014/dotfiles), and [Flavio Antelo](https://antelo.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b).
 
 Inspiration for neovim lua config found [here](https://vonheikemen.github.io/devlog/tools/build-your-first-lua-config-for-neovim/), thanks Heiker Curiel.
