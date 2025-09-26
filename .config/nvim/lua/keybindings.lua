@@ -1,31 +1,19 @@
-local buildMap = function(buffer)
-  return function(keys, func, desc, mode)
-    local config = { desc = desc }
-    if buffer then
-      config.buffer = buffer
-    end
-    mode = mode or "n"
-    vim.keymap.set(mode, keys, func, config)
-  end
-end
-
 return {
   lsp = function()
   end,
   telescope = function()
-    local map = buildMap()
     local builtin = require("telescope.builtin")
 
-    map("<leader>sf", builtin.find_files, "[S]earch [F]iles")
-    map("<leader>sg", builtin.live_grep, "[S]earch by [G]rep")
-    map("<leader><leader>", builtin.buffers, "[ ] Find existing buffers")
-    map("<leader>sh", builtin.help_tags, "[S]earch [H]elp")
-    map("<leader>sd", builtin.diagnostics, "[S]earch [D]iagnostics")
+    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope [f]ind [f]iles" })
+    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope [f]ind [b]uffer" })
+    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope [f]ind [h]elp tag" })
+    vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Telescope [s]earch [d]iagnostics" })
+    vim.keymap.set("n", "<leader>lg", builtin.live_grep, { desc = "Telescope [l]ive [g]rep" })
 
-    map("gD", builtin.lsp_type_definitions, "[G]oto Type [D]efinition")
-
-    map("gd", builtin.lsp_definitions, "[G]oto [D]efinition")
-    map("gr", builtin.lsp_references, "[G]oto [R]eferences")
-    map("gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
+    -- FIXME: Decide if I want these, or the LSP default commands (see `:help lsp-defaults`)
+    -- vim.keymap.set("n", "gD", builtin.lsp_type_definitions, "[G]oto Type [D]efinition")
+    -- vim.keymap.set("n", "gd", builtin.lsp_definitions, "[G]oto [D]efinition")
+    -- vim.keymap.set("n", "gr", builtin.lsp_references, "[G]oto [R]eferences")
+    -- vim.keymap.set("n", "gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
   end
 }
