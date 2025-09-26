@@ -39,6 +39,13 @@ To use the `git` settings, you'll need to create a `~/.gitconfig` referencing `.
 	path = ~/.gitconfig.settings
 ```
 
+You also have to have bash 5.3+ installed and available on the path, or some of the tmux plugins will break. Note that you'll have to do this on macos:
+
+```bash
+brew install bash
+sudo ln -s /opt/homebrew/bin/bash /usr/local/bin/bash
+```
+
 ## TODO
 
 - [ ] use `--git-dir` and `--work-tree` options for signify in `nvim` when editing config files
