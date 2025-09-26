@@ -38,8 +38,8 @@ alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 
 
 if ! command -v pbcopy 2>&1 >/dev/null; then
-  alias pbcopy="wl-copy"
-  alias pbpaste="wl-paste"
+	alias pbcopy="wl-copy"
+	alias pbpaste="wl-paste"
 fi
 
 # Use $ZSH/custom for additional aliases
@@ -51,15 +51,15 @@ export EDITOR="nvim"
 
 # shell functions {{{
 j () {
-  cd "$(z | fzf | awk '{print $2}')"
+	cd "$(z | fzf | awk '{print $2}')"
 }
 
 g () {
-  git checkout $(git branch -a --format="%(refname:short)" --sort="-authordate" | fzf | sed 's|origin/||g')
+	git checkout $(git branch -a --format="%(refname:short)" --sort="-authordate" | fzf | sed 's|origin/||g')
 }
 
 scratch() {
-  vim +'normal G' $SCRATCH_DIR/`date +'%Y-%m-%d'`.md
+	vim +'normal G' $SCRATCH_DIR/`date +'%Y-%m-%d'`.md
 }
 
 scratchlast() {
@@ -67,30 +67,30 @@ scratchlast() {
 }
 
 getextension() {
-  # with help from: https://stackoverflow.com/a/965072
+	# with help from: https://stackoverflow.com/a/965072
 
-  filename="$1"
-  extension="${filename##*.}"
+	filename="$1"
+	extension="${filename##*.}"
 
-  echo $extension
+	echo $extension
 }
 
 vimbranchdiff() {
-  FILE="$1"
-  REF="$2"
+	FILE="$1"
+	REF="$2"
 
-  vim -d $FILE <(git show $REF:$FILE)
+	vim -d $FILE <(git show $REF:$FILE)
 }
 
 vimgitshow() {
-  FILE="$1"
-  REF="$2"
-  git show $REF:$FILE | vim -c "doautocmd BufRead $(basename $FILE)" -
+	FILE="$1"
+	REF="$2"
+	git show $REF:$FILE | vim -c "doautocmd BufRead $(basename $FILE)" -
 }
 # }}}
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 # vim: fdm=marker
