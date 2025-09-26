@@ -46,7 +46,7 @@ fi
 # }}}
 
 # vim {{{
-export EDITOR="vim"
+export EDITOR="nvim"
 # }}}
 
 # shell functions {{{
