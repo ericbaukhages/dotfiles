@@ -7,8 +7,8 @@ return {
     vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope [f]ind [f]iles" })
     vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope [f]ind [b]uffer" })
     vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope [f]ind [h]elp tag" })
-    vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Telescope [s]earch [d]iagnostics" })
-    vim.keymap.set("n", "<leader>lg", builtin.live_grep, { desc = "Telescope [l]ive [g]rep" })
+    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope [f]ind [d]iagnostics" })
+    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope [f]ind [g]rep" })
 
     -- FIXME: Decide if I want these, or the LSP default commands (see `:help lsp-defaults`)
     -- vim.keymap.set("n", "gD", builtin.lsp_type_definitions, "[G]oto Type [D]efinition")
