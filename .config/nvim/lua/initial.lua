@@ -14,3 +14,5 @@ vim.g.maplocalleader = "\\"
 
 -- Only use the `<C-a>` command, as `<C-e>` already works as `<End>`
 vim.keymap.set('c', '<C-a>', '<Home>', {})
+
+vim.diagnostic.config({ virtual_text = true })
