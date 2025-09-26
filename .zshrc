@@ -2,7 +2,7 @@
 export GOPATH=$HOME/go
 export RUSTPATH=$HOME/.cargo
 export NVIM_NIGHTLY_PATH=$HOME/local/nvim/bin
-export PATH=$PATH:/usr/local/bin:$GOPATH/bin:$RUSTPATH/bin:/opt/homebrew/bin:$NVIM_NIGHTLY_PATH
+export PATH=$PATH:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$RUSTPATH/bin:/opt/homebrew/bin:$NVIM_NIGHTLY_PATH
 #}}}
 
 # oh-my-zsh {{{
