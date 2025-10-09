@@ -4,16 +4,15 @@ return {
   telescope = function()
     local builtin = require("telescope.builtin")
 
-    vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope [f]ind [f]iles" })
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope [f]ind [b]uffer" })
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope [f]ind [h]elp tag" })
-    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Telescope [f]ind [d]iagnostics" })
-    vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope [f]ind [g]rep" })
+    vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Telescope [s]earch [f]iles" })
+    vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "Telescope [s]earch [b]uffer" })
+    vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Telescope [s]earch [h]elp tag" })
+    vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Telescope [s]earch [d]iagnostics" })
+    vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Telescope [s]earch [g]rep" })
 
-    -- FIXME: Decide if I want these, or the LSP default commands (see `:help lsp-defaults`)
-    -- vim.keymap.set("n", "gD", builtin.lsp_type_definitions, "[G]oto Type [D]efinition")
-    -- vim.keymap.set("n", "gd", builtin.lsp_definitions, "[G]oto [D]efinition")
-    -- vim.keymap.set("n", "gr", builtin.lsp_references, "[G]oto [R]eferences")
-    -- vim.keymap.set("n", "gI", builtin.lsp_implementations, "[G]oto [I]mplementation")
+    vim.keymap.set("n", "gD", builtin.lsp_type_definitions, { desc = "[G]oto Type [D]efinition" })
+    vim.keymap.set("n", "gd", builtin.lsp_definitions, { desc = "[G]oto [D]efinition" })
+    vim.keymap.set("n", "gr", builtin.lsp_references, { desc = "[G]oto [R]eferences" })
+    vim.keymap.set("n", "gI", builtin.lsp_implementations, { desc = "[G]oto [I]mplementation" })
   end
 }
