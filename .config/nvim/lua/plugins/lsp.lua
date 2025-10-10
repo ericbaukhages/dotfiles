@@ -61,10 +61,6 @@ return {
 
 			vim.lsp.config("eslint", {
 				on_attach = function(client, bufnr)
-					if not vim.lsp.config.eslint.on_attach then return end
-
-					vim.lsp.config.eslint.on_attach(client, bufnr)
-
 					-- FIXME: figure out why this isn't working as expected
 					-- vim.api.nvim_create_autocmd("BufWritePre", {
 					-- 	buffer = bufnr,
@@ -75,10 +71,12 @@ return {
 
 			vim.lsp.enable("ts_ls")
 
+			vim.lsp.enable("copilot")
+
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 				callback = function()
-					require("../keybindings").lsp()
+					require("keybindings").lsp()
 				end
 			})
 		end
