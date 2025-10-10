@@ -1,5 +1,4 @@
 {
-  "conform.nvim": { "branch": "master", "commit": "b4aab989db276993ea5dcb78872be494ce546521" },
   "flexoki": { "branch": "main", "commit": "c217f9827082b6f9d345d61e1298a92f1f7c4d49" },
   "gitsigns.nvim": { "branch": "main", "commit": "f780609807eca1f783a36a8a31c30a48fbe150c5" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
@@ -10,6 +9,8 @@
   "nvim-lspconfig": { "branch": "master", "commit": "336b388c272555d2ae94627a50df4c2f89a5e257" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
   "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },
+  "sidekick.nvim": { "branch": "main", "commit": "d75821cd6f278cd80b65d6e63d15666cf7f25a0d" },
+  "snacks.nvim": { "branch": "main", "commit": "dae80fb393f712bd7352a20f9185f5e16b69f20f" },
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "master", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "vim-abolish": { "branch": "master", "commit": "dcbfe065297d31823561ba787f51056c147aa682" },

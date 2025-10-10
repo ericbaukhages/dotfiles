@@ -13,6 +13,7 @@ return {
 					"lua_ls",
 					"ts_ls",
 					"eslint",
+					"copilot",
 				}
 			})
 		end
