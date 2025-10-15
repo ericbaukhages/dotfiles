@@ -16,3 +16,10 @@ vim.g.maplocalleader = "\\"
 vim.keymap.set('c', '<C-a>', '<Home>', {})
 
 -- vim.diagnostic.config({ virtual_text = true })
+
+vim.opt.showmode = false
+vim.opt.list = true
+vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.opt.scrolloff = 2
