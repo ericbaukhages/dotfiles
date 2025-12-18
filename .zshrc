@@ -58,8 +58,16 @@ g () {
 	git checkout $(git branch -a --format="%(refname:short)" --sort="-authordate" | fzf | sed 's|origin/||g')
 }
 
+scratch_file() {
+	echo -n $SCRATCH_DIR/`date +'%Y-%m-%d'`.md
+}
+
+scratch_default() {
+	sed 's/{{ todayDate }}/'"$(date +'%A, %B %d, %Y')"'/g' ~/.config/scratch/default.md
+}
+
 scratch() {
-	vim +'normal G' $SCRATCH_DIR/`date +'%Y-%m-%d'`.md
+	vim +'normal G' $(scratch_file)
 }
 
 scratchlast() {
