@@ -5,6 +5,5 @@ return {
 	"tpope/vim-repeat",
 	"tpope/vim-sleuth",
 	"tpope/vim-surround",
-	"tpope/vim-vinegar",
 	"tpope/vim-fugitive",
 }

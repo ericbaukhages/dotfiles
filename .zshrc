@@ -18,6 +18,8 @@ plugins=(
 	z
 )
 
+unset autocd
+
 source $ZSH/oh-my-zsh.sh
 # }}}
 
@@ -95,6 +97,11 @@ vimgitshow() {
 	REF="$2"
 	git show $REF:$FILE | vim -c "doautocmd BufRead $(basename $FILE)" -
 }
+
+alias markdownToPdf="pandoc --pdf-engine=xelatex -V geometry:margin=0.6in"
+
+alias serve="python3 -m http.server 8000"
+
 # }}}
 
 export NVM_DIR="$HOME/.nvm"
