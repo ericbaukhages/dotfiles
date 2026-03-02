@@ -1,10 +1,23 @@
 [init]
 	defaultBranch = main
+
 [tig]
 	tab-size = 2
-[core]
-	pager = less -x2 --mouse
+
 [push]
 	autoSetupRemote = true
+
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	dark = true
+
+[merge]
+	conflictStyle = zdiff3
 
 ; vi: ft=gitconfig
