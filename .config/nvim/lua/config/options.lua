@@ -27,3 +27,9 @@ vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 2
+
+-- vim-flagship
+vim.opt.laststatus = 2
+vim.opt.showtabline = 2
+vim.opt.showtabline = 2
+-- guioptions-=e
