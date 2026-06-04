@@ -1,0 +1,13 @@
+vim.pack.add({
+	"https://github.com/tpope/vim-abolish",
+	"https://github.com/tpope/vim-commentary",
+	"https://github.com/tpope/vim-eunuch",
+	"https://github.com/tpope/vim-flagship",
+	"https://github.com/tpope/vim-fugitive",
+	"https://github.com/tpope/vim-repeat",
+	"https://github.com/tpope/vim-rhubarb",
+	"https://github.com/tpope/vim-sleuth",
+	"https://github.com/tpope/vim-surround",
+	"https://github.com/tpope/vim-unimpaired",
+	"https://github.com/tpope/vim-vinegar",
+})

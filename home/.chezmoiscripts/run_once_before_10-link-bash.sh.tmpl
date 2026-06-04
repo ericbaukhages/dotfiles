@@ -1,0 +1,6 @@
+#!/bin/bash
+{{- if and (eq .chezmoi.os "darwin") (eq .chezmoi.arch "arm64") }}
+if [ -f /opt/homebrew/bin/bash ] && [ ! -f /usr/local/bin/bash ]; then
+	sudo ln -s /opt/homebrew/bin/bash /usr/local/bin/bash
+fi
+{{- end }}

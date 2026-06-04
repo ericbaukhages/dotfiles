@@ -14,7 +14,9 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
 	fzf
 	gitfast
+{{- if eq .chezmoi.os "darwin" }}
 	macos
+{{- end }}
 	z
 )
 
@@ -36,13 +38,13 @@ alias tree="tree --dirsfirst -I 'node_modules|dist|vendor'"
 alias a="tmux attach"
 alias bat="bat -pp"
 
-alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dotfiles="chezmoi"
 
 
-if ! command -v pbcopy 2>&1 >/dev/null; then
-	alias pbcopy="wl-copy"
-	alias pbpaste="wl-paste"
-fi
+{{- if eq .chezmoi.os "linux" }}
+alias pbcopy="wl-copy"
+alias pbpaste="wl-paste"
+{{- end }}
 
 # Use $ZSH/custom for additional aliases
 # }}}
