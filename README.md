@@ -1,23 +1,41 @@
 # dotfiles
 
-## Instructions
+Managed with [chezmoi](https://www.chezmoi.io/).
 
-Install `oh-my-zsh`:
+## Install
 
-```bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Set up dotfiles bare repo:
+On a new machine, run:
 
 ```bash
-git clone git@github.com:ericbaukhages/dotfiles.git --bare $HOME/.dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dotfiles config --local status.showUntrackedFiles no
-dotfiles checkout
+sh -c "$(curl -fsLS https://get.chezmoi.io)" -- init --apply ericbaukhages
 ```
 
-You can then use the `dotfiles` alias to track changes to `.dotfiles`.
+This will:
+
+- Install chezmoi
+- Clone this repo into `~/.local/share/chezmoi`
+- Prompt for your Git name and email
+- Install oh-my-zsh (if missing)
+- Apply all dotfiles
+- Run OS-specific setup scripts (Homebrew bundle on macOS, folder creation, etc.)
+
+After installation, use the `dotfiles` alias (or `chezmoi` directly) to manage your dotfiles.
+
+## Daily use
+
+```bash
+# See what would change
+chezmoi diff
+
+# Edit a dotfile's source
+chezmoi edit ~/.zshrc
+
+# Apply changes
+chezmoi apply
+
+# Pull latest changes from GitHub and apply
+chezmoi update
+```
 
 ## Iosevka
 
@@ -31,28 +49,15 @@ curl -s 'https://api.github.com/repos/be5invis/Iosevka/releases/latest' | jq -r 
 ```
 Don't forget to unzip the downloads.
 
-## Warnings
-
-To use the `git` settings, you'll need to create a `~/.gitconfig` referencing `.gitconfig.settings`:
-```
-[include]
-	path = ~/.gitconfig.settings
-```
-
-You also have to have bash 5.3+ installed and available on the path, or some of the tmux plugins will break. Note that you'll have to do this on macos:
-
-```bash
-brew install bash
-sudo ln -s /opt/homebrew/bin/bash /usr/local/bin/bash
-```
-
 ## TODO
 
-- [ ] use `--git-dir` and `--work-tree` options for signify in `nvim` when editing config files
+- [ ] use chezmoi to manage signify in `nvim` when editing config files
 - [ ] replicate the inline partial history search from oh-my-zsh
 
 ## Acknowledgement
 
-Dotfiles structure inspired by [Marcel Krčah](https://marcel.is/managing-dotfiles-with-git-bare-repo/), [Mat Jones](https://github.com/mrjones2014/dotfiles), and [Flavio Antelo](https://antelo.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b).
+Dotfiles managed with [chezmoi](https://www.chezmoi.io/).
+
+Previous dotfiles structure inspired by [Marcel Krčah](https://marcel.is/managing-dotfiles-with-git-bare-repo/), [Mat Jones](https://github.com/mrjones2014/dotfiles), and [Flavio Antelo](https://antelo.medium.com/how-to-manage-your-dotfiles-with-git-f7aeed8adf8b).
 
 Current `nvim` config started by copying the Neovim From Scratch by MrJakob (Jakob Westhoff) ([Youtube](https://www.youtube.com/watch?v=g1gyYttzxcI) [GitHub](https://github.com/jakobwesthoff/nvim-from-scratch)).
