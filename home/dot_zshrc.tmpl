@@ -1,11 +1,15 @@
-# $PATH {{{
+# $PATH
 export GOPATH=$HOME/go
 export RUSTPATH=$HOME/.cargo
 export NVIM_NIGHTLY_PATH=$HOME/local/nvim/bin
 export PATH=$HOME/bin:$PATH:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$GOPATH/bin:$RUSTPATH/bin:/opt/homebrew/bin:$NVIM_NIGHTLY_PATH
-#}}}
 
-# oh-my-zsh {{{
+# Nix
+if [ -e /etc/profile.d/nix.sh ]; then
+  . /etc/profile.d/nix.sh
+fi
+# hm-session-vars.sh is sourced by the nix daemon, no action needed
+# oh-my-zsh
 export ZSH_DISABLE_COMPFIX
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
@@ -23,16 +27,12 @@ plugins=(
 unset autocd
 
 source $ZSH/oh-my-zsh.sh
-# }}}
-
-# settings {{{
+# settings
 export GIT_PS1_SHOWUPSTREAM="auto"
 export PAGER="less --mouse"
 export SCRATCH_DIR="$HOME/Documents/scratch"
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
-# }}}
-
-# aliases {{{
+# aliases
 alias less="less --mouse"
 alias tree="tree --dirsfirst -I 'node_modules|dist|vendor'"
 alias a="tmux attach"
@@ -47,13 +47,9 @@ alias pbpaste="wl-paste"
 {{- end }}
 
 # Use $ZSH/custom for additional aliases
-# }}}
-
-# vim {{{
+# vim
 export EDITOR="nvim"
-# }}}
-
-# shell functions {{{
+# shell functions
 j () {
 	cd "$(z | fzf | awk '{print $2}')"
 }
@@ -67,7 +63,7 @@ scratch_file() {
 }
 
 scratch_default() {
-	sed 's/{{ todayDate }}/'"$(date +'%A, %B %d, %Y')"'/g' ~/.config/scratch/default.md
+	sed 's/{{"{{"}} todayDate {{"}}"}}/'"$(date +'%A, %B %d, %Y')"'/g' ~/.config/scratch/default.md
 }
 
 scratch() {
@@ -104,7 +100,6 @@ alias markdownToPdf="pandoc --pdf-engine=xelatex -V geometry:margin=0.6in"
 
 alias serve="python3 -m http.server 8000"
 
-# }}}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
