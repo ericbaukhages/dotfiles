@@ -24,10 +24,11 @@ plugins=(
 	z
 )
 
+source $ZSH/oh-my-zsh.sh
+
+# settings
 unset autocd
 
-source $ZSH/oh-my-zsh.sh
-# settings
 export GIT_PS1_SHOWUPSTREAM="auto"
 export PAGER="less --mouse"
 export SCRATCH_DIR="$HOME/Documents/scratch"
@@ -38,8 +39,7 @@ alias tree="tree --dirsfirst -I 'node_modules|dist|vendor'"
 alias a="tmux attach"
 alias bat="bat -pp"
 
-alias dotfiles="chezmoi"
-
+alias dotfiles="chezmoi git --"
 
 {{- if eq .chezmoi.os "linux" }}
 alias pbcopy="wl-copy"
