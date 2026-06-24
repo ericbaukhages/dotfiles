@@ -8,23 +8,15 @@ export PATH=$HOME/bin:$PATH:$HOME/.local/bin:/usr/local/bin:/usr/local/go/bin:$G
 if [ -e /etc/profile.d/nix.sh ]; then
   . /etc/profile.d/nix.sh
 fi
-# hm-session-vars.sh is sourced by the nix daemon, no action needed
-# oh-my-zsh
-export ZSH_DISABLE_COMPFIX
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-plugins=(
-	fzf
-	gitfast
-{{- if eq .chezmoi.os "darwin" }}
-	macos
-{{- end }}
-	z
-)
+# fzf
+source <(fzf --zsh 2>/dev/null)
 
-source $ZSH/oh-my-zsh.sh
+# zoxide (replaces oh-my-zsh `z` plugin)
+eval "$(zoxide init zsh)"
+
+# starship prompt (replaces oh-my-zsh robbyrussell theme)
+eval "$(starship init zsh)"
 
 # settings
 unset autocd
@@ -46,12 +38,11 @@ alias pbcopy="wl-copy"
 alias pbpaste="wl-paste"
 {{- end }}
 
-# Use $ZSH/custom for additional aliases
 # vim
 export EDITOR="nvim"
 # shell functions
 j () {
-	cd "$(z | fzf | awk '{print $2}')"
+	cd "$(zoxide query --list | fzf)"
 }
 
 g () {
@@ -75,8 +66,6 @@ scratchlast() {
 }
 
 getextension() {
-	# with help from: https://stackoverflow.com/a/965072
-
 	filename="$1"
 	extension="${filename##*.}"
 
@@ -102,7 +91,8 @@ alias serve="python3 -m http.server 8000"
 
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-# vim: fdm=marker
+# completions
+autoload -Uz compinit && compinit

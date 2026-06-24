@@ -18,6 +18,8 @@
     fzf
     bat
     delta
+    starship
+    zoxide
     jq
     htop
     tree
