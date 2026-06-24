@@ -94,9 +94,7 @@ alias markdownToPdf="pandoc --pdf-engine=xelatex -V geometry:margin=0.6in"
 alias serve="python3 -m http.server 8000"
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+eval "$(fnm env --use-on-cd)"
 
 # completions
 autoload -Uz compinit && compinit

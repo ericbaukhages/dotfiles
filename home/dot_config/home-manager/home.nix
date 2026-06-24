@@ -18,6 +18,7 @@
     fzf
     bat
     delta
+    fnm
     starship
     zoxide
     jq
