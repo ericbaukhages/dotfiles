@@ -33,6 +33,10 @@ alias bat="bat -pp"
 
 alias dotfiles="chezmoi git --"
 
+{{- if eq .chezmoi.os "darwin" }}
+alias macos="open"
+{{- end }}
+
 {{- if eq .chezmoi.os "linux" }}
 alias pbcopy="wl-copy"
 alias pbpaste="wl-paste"
@@ -96,3 +100,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # completions
 autoload -Uz compinit && compinit
+
+# vim: fdm=marker
