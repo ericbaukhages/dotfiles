@@ -1,7 +1,7 @@
 #!/bin/bash
 {{- if eq .chezmoi.os "darwin" }}
 if command -v brew >/dev/null 2>&1; then
-	brew bundle --global
+	brew bundle --file "$HOME/.Brewfile"
 else
 	echo "Homebrew not installed, skipping bundle"
 fi
